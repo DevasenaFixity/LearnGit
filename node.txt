@@ -1,0 +1,1070 @@
+Install Node.js
+
+Framework
+
+At Command Prmpt : chk version of node js  --> node -v
+
+Install npm using i.e type script
+npm install -g typescript
+
+chk typescript version using --> tsc --version
+
+
+Running ts code at Vs code
+
+1.Create  flder in ur pc
+2.open this folder in vs code
+
+
+Get-ExecutionPolicy
+
+Set-ExecutionPolicy unrestrict
+
+y
+
+
+
+
+--------To Compile TS
+tsc.cmd
+
+to run------
+node dist/filename.js
+
+
+
+--------------
+Install Angular 
+npm install -g @angular/cli
+npm --version
+
+ng help
+ng generate --help
+To create, build, and serve a new, basic Angular project on a development server, go to the parent directory of your new workspace use the following commands:
+
+
+ng new my-first-project
+cd my-first-project
+ng serve
+
+Create new  Component
+ng g c Component-Name
+
+-------------
+DataTypes
+
+let variableName: type;
+let variableName: type = value;
+const constantName: type = value;
+
+let name: string = 'John';
+let age: number = 25;
+let active: boolean = true;
+
+let counter: number;
+counter = 'Hello'; // compile error 
+
+let result: any;
+result = 10.123;
+
+Arrays------
+let firstName: string = 'John';
+let title: string = 'Web Developer';
+let profile: string = `Im ${firstName}. I'm a ${title}`;
+
+
+tuple--------
+var employee: [number, string] = [1, "Steve"];
+employee.push(2, "Bill"); 
+console.log(employee); //Output: [1, 'Steve', 2, 'Bill']
+
+let ourTuple: [number, boolean, string];
+
+// initialize correctly
+ourTuple = [5, false, 'Coding God was here'];
+console.log(ourTuple);  // display all
+console.log(ourTuple[0]); // display only 5
+
+----------
+
+
+any--------
+
+let coupon: any;
+coupon = 26;
+coupon = 'DEAL26';
+coupon = true;
+console.log(coupon);
+
+let arr: any[] = ["John", 212, true]; 
+arr.push("Smith"); 
+console.log(arr); //Output: [ 'John', 212, true, 'Smith' ] 
+----------
+
+
+
+
+let names: string[] = ['John', 'Jane', 'Peter', 'David', 'Mary'];
+for(var x in names)
+{
+console.log(names[x]);
+}
+console.log(profile);
+
+
+
+--- functions in TS
+
+function sayHi(): int { 
+    console.log('Hi!')
+    return 0;
+} 
+
+greeting = function (name: string) {
+    return `Hi ${name}`;
+};
+
+
+var res = sayHi();
+if(res ==1)
+{
+    console.log("ok");
+    
+}
+else
+{
+    
+    console.log("not ok");
+}
+
+
+------------
+
+function Add(a:number , b:number): void
+{
+    let num3: number = a+b;
+    console.log(num3);
+    
+}
+
+var res1= Add(10,20);
+------------
+---Functions in TS---
+var sum = function (x:number, y:number) {
+    return x + y;
+}
+var res = sum(10,25);
+console.log(res);
+
+-------
+
+
+let sum1 = (x: number, y: number): number => {
+    return x + y;
+}
+var res1 = sum1(25,25);
+console.log(res1);
+
+let sum2 = (x: number, y: number) => x + y;
+console.log(sum2(3, 4)); //returns 7
+
+
+
+---------Fun with Multiple Return TYpes--------
+
+function getValue(num: number): string | number {
+    if (num > 5) {
+      return 100;
+    }
+  
+    return 'hello';
+  }
+  
+  //  const result1: string | number
+  const result = getValue(4);
+
+  if (typeof result === 'string') {
+    //  result is a string here
+    console.log(result.toUpperCase());
+  } else {
+    //  result is a number here
+    console.log(result.toFixed(2));
+  }
+  -------------------
+
+
+-------Class WIth Function---------
+class Person1 {
+    public ssn!: string;
+    public firstName!: string;
+    public lastName!: string;
+   
+
+    getFullName(): string {
+        return `${this.firstName} ${this.lastName}`; 
+    }
+}
+
+var obj1 = new Person1();
+obj1.ssn="Hi";
+obj1.firstName="hello";
+obj1.lastName="Hwru";
+console.log(obj1.getFullName());
+------------
+
+--------Class With functions--
+class Student{
+    // variables
+    rollnumber:number
+    name:string
+ 
+    // constructors
+    constructor(rollnumber:number, name:string){
+        this.rollnumber = rollnumber
+        this.name = name
+    }
+ 
+    // functions
+    displayInformation():void{
+        console.log("Name : "+this.name+", Roll Number : "+this.rollnumber)
+    }
+}
+ 
+var student1 = new Student(2, "Rohit")
+var student2 = new Student(4, "Kohli")
+ 
+// accessing variables
+console.log(student1.name)
+console.log(student2.rollnumber)
+ 
+// calling functions
+student1.displayInformation()
+student2.displayInformation()
+
+
+
+--------Class With Fields and Fun---
+
+class Person{
+    name!:string
+ 
+    speak():void{
+        console.log(this.name+" can speak.")
+    }
+}
+
+var p = new Person()
+p.name="Yes";
+p.speak()
+
+
+-----------Constructor------
+class Person1{
+ constructor()
+ {
+    console.log("hi");
+ }
+}
+
+var p = new Person1()
+
+--------Classes WIth Access Specifier
+
+class Person {
+    private ssn: string;
+    private firstName: string;
+    private lastName: string;
+
+    constructor(ssn: string, firstName: string, lastName: string) {
+        this.ssn = ssn;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    getFullName(): string {
+        return `${this.firstName} ${this.lastName}`; 
+    }
+}
+
+var obj = new Person("Hi","Hello","HWRU");
+console.log(obj.ssn); //Error Here
+------------
+
+---------Constructor--------
+class Point {
+    x: number=58;
+    y: number=158;
+    z:number;
+    Name :string
+    constructor()
+    {
+      console.log( this.z=78);
+      console.log(  this.Name="fcc");
+    }
+   
+  }
+   
+  const pt = new Point();
+  console.log(pt.x);
+  console.log(pt.y);
+
+
+-----------Constr Ex2-------
+class Point {
+    x: number=58;
+    y: number=158;
+    z:number;
+    Name :string
+    FirstName!: string;
+    LastName!: string;
+    constructor()
+    {
+      console.log( this.z=78);
+      console.log(  this.Name="fcc");
+    }
+  }
+
+  class Point1 extends Point
+  {
+    Details()
+    {
+    console.log(this.FirstName="Moin");
+    console.log(this.LastName="Uddin");
+    }
+  }
+   
+  const pt = new Point();
+  var pt1 = new Point1();
+  console.log(pt.x);
+  console.log(pt.y);
+  pt1.Details();
+
+
+-------Inheritance------
+class Animal1 {   
+    eat():void {   
+        console.log("Eating")   
+     }   
+}   
+class Dog extends Animal1 {   
+   bark():void {   
+      console.log("Barking")   
+   }   
+}  
+class BabyDog extends Dog{   
+    weep():void {   
+        console.log("Weeping")   
+     }  
+}  
+let obj1 = new BabyDog();   
+obj1.eat();  
+obj1.bark();  
+obj1.weep()  
+
+let obj2 = new Dog();
+obj2.eat();
+
+--------------Inheritance 2-------
+class Persons {
+    constructor(private firstName: string, private lastName: string) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+    getFullName(): string {
+        return `${this.firstName} ${this.lastName}`;
+    }
+    describe(): string {
+        return `This is ${this.firstName} ${this.lastName}.`;
+    }
+}
+
+class Employee extends Persons {
+    constructor(
+        firstName: string,
+        lastName: string,
+        private jobTitle: string) {
+        
+        // call the constructor of the Person class:
+        super(firstName, lastName);
+    }
+}
+
+let employees = new Employee('John', 'Doe', 'Web Developer');
+
+console.log(employees.getFullName());
+console.log(employees.describe());
+
+-------
+
+----------DataTypes in TS--------
+let a = null;
+
+let b = 123;
+
+let c = 123.456;
+
+let d = "Geeks";
+
+let e = undefined;
+
+let f = true;
+
+let g = 0b111001; // Binary
+
+let h = 0o436; // Octal
+
+let imber = 0xadf0d; // Hexa-Decimal
+
+console.log(b);
+
+
+-----Fun in ts--
+
+function Data(a,b)
+{
+return a+b;
+
+}
+
+let concat =  Data("Hi","hello");
+console.log(concat);
+
+let add= Data(10,20);
+console.log(add);
+
+-----Undefine-------
+function wish(wish,name)
+{
+
+if(name==undefined)
+{
+return wish;
+
+}
+else
+{
+return wish+name;
+}
+}
+console.log(wish('Hi','Moin'));
+console.log(wish('Hi',undefined));
+
+
+--annomous--
+let sum = (a,b)=>
+{
+
+    return a+b;
+}
+console.log(sum(10,20));
+
+let printdata = () =>
+{
+console.log("No Parameter");
+}
+
+printdata();
+
+
+----Create config file--
+
+at terminal  -->  tsc --init 
+
+
+---------Inherit-------
+class Animal {
+    constructor() {
+        console.log("Animal class");
+    }
+    sub(a:number , b:number): void
+    {
+        let num3: number = a+b;
+        console.log("SUb from Parent :"+num3);
+        
+    }
+}
+
+class Cat extends Animal {
+
+    constructor() {
+        super();  // calling parent constr
+    }
+     Add(a:number , b:number): void
+{
+    this.sub(12,45);
+    let num3: number = a+b;
+    console.log("Add from Child :"+num3);
+    
+}
+
+
+ 
+}
+
+var cat = new Cat();
+cat.Add(10,20);
+
+----------
+
+static -------------
+
+class Circle {
+    static pi: number = 3.14;
+    
+    static calculateArea(radius:number) {
+        return this.pi * radius * radius;
+    }
+}
+console.log(Circle.pi); // returns 3.14
+console.log(Circle.calculateArea(5)); // returns 78.5
+
+--------
+
+-----Export and Import-------
+export let age : number = 20;
+export class Employee {
+    empCode: number;
+    empName: string;
+    constructor(name: string, code: number) {
+        this.empName = name;
+        this.empCode = code;
+    }
+    displayEmployee() {
+        console.log ("Employee Code: " + this.empCode + ", Employee Name: " + this.empName );
+    }
+}
+
+
+//Import only class amd Methods
+import { Employee } from "./Export";
+let empObj = new Employee("Steve Jobs", 1);
+empObj.displayEmployee(); //Output: Employee Code: 1, Employee Name: Steve Jobs  
+
+
+
+//Import  class amd Methods and fields
+import * as Emp from "./Export"
+console.log(Emp.age); // 20
+let empObj1 = new Emp.Employee("Bill Gates" , 2);
+empObj.displayEmployee(); //Output: Employee Code: 2, Employee Name: Bill Gates
+
+-------------
+
+---------Abstrat Ex-----
+abstract class DemoEx
+{
+    constructor(private Firstname:string,private lastname:string)
+    {
+
+
+    }
+
+    abstract GetSalary(): number
+
+    abstract MyDetails(): string
+
+  get Getdetails():string{
+    return `${this.Firstname} ${this.lastname}`
+    }
+
+    SalDetails(): string{
+    return `${this.Firstname} Makes ${this.GetSalary()} a month` 
+
+    }
+}
+
+class CallAbs extends DemoEx
+{
+    
+    constructor( firstname:string ,  lastname:string ,private salary:number,private mydata:string)
+    {
+    super(firstname,lastname)
+
+    }
+ 
+    GetSalary():number
+    {
+
+        return this.salary
+    }
+
+    MyDetails(): string {
+       return this.mydata
+    }
+}
+
+let data = new CallAbs("Moin","Uddin",60000,"kmu")
+
+console.log(data.SalDetails());
+console.log(data.MyDetails());
+
+
+
+-------------
+
+interface Size {
+    width : number,
+    height: number,
+    areacal(): void; 
+}
+
+class Shapes implements Size {
+    width: number;
+    height: number;
+    constructor (width:number, height:number) {
+        this.width = width;
+        this.height = height;
+    }
+    areacal() {
+       return this.width*  this.height;
+    }
+}
+
+let object = new Shapes(45,78);
+console.log(object.areacal());
+
+
+-------------
+
+What is Angular Interpolation?
+If you want to display the read-only data on a view template (i.e. From Component to the View Template), then you can use the one-way data binding technique i.e. the Angular interpolation.
+
+The Interpolation in Angular allows you to place the component property name in the view template, enclosed in double curly braces i.e. {{propertyName}}.  So, the Angular Interpolation is a technique that allows the user to bind a value to a UI element.
+
+Understanding Interpolation in Angular Application:
+Let us understand how to use the Interpolation with some examples.
+
+export class AppComponent {
+  FirstName: string = 'Anurag';
+  LastName: string = 'Mohanty';
+  Salary : number = 100000;
+  Surname : string = null;
+  
+  
+
+GetFullName() : string{
+    return this.FirstName + ' ' + this.LastName;
+  }
+}
+
+<h1> {{FirstName + ' ' + LastName}} </h1> 
+
+<h1>{{'First Name :'+ FirstName + ', Last Name : ' + LastName }} </h1>       
+
+<h1> Bonus = {{Salary * .10 }} </h1>   
+
+<h1> Last Name : {{ Surname ? Surname : 'Not Available' }} </h1>   
+
+<h1> Full Name : {{ GetFullName() }} </h1>     
+
+ 
+
+
+------Property Binding----
+
+title ="Property Binding!";
+isDisabled: boolean = true;
+ImagePath : string = "https://dotnettutorials.net/dotnettutorials.png";
+  btntext = "Please sign in!";
+  firstname="Anusha";
+  LastName="Varma";
+  SurName="Anu";
+
+clickcount=0;
+clickme()
+{
+this.clickcount++
+}
+  
+<input text style = "color:green;
+                margin-top: 40px; 
+                margin-left: 100px;" 
+[value]='title'>
+
+<img src = {{ImagePath}} />  
+
+<button disabled='{{isDisabled}}'>Cancel</button>    
+
+    <input type="button" [value]='btntext'>
+
+    <input type="text"  value='firstname'>
+
+    <input type="text"  value='LastName'>
+
+    <input type="text"  value='SurName'>
+
+
+<button (click)="clickme()">submit</button>
+
+<p>u have clicked {{clickcount}}</p>
+
+
+----------Two Way Binding --
+
+Address=""
+   clearAdd()
+   {
+    this.Address=""
+   }
+
+<p>Two Way Bindin Example</p>
+
+<input type="text" name="Address" [(ngModel)] ="Address">
+<p>The Address Which u have ENtered is : {{Address}}</p>
+<button (click)="clearAdd()">Clear</button>
+
+
+
+--------------------
+
+Structural directives are responsible for the Structure and Layout of the DOM Element. It is used to hide or display the things on the DOM. Structural Directives can be easily identified using the ‘*’. Every Structural Directive is preceded by a ‘*’ symbol.
+Some of the Build in Structural Directives with Examples are as follows:
+
+1. *ngIf:
+
+ngIf is used to display or hide the DOM Element based on the expression value assigned to it. The expression value may be either true or false.
+
+Syntax:
+
+<div *ngIf="boolean"> </div>
+
+<div *ngIf="false">
+  This text will be hidden
+  <h1 [ngStyle]="{'color':'#FF0000'}">
+    GFG Structural Directive Example
+  </h1>
+</div>
+<div *ngIf="true">
+  This text will be displayed
+  <h1 [ngStyle]="{'color':'#00FF00'}">
+    GFG Structural Directive Example
+  </h1>
+</div>
+
+
+
+---------
+
+2. *ngIf-else:
+
+ngIf-else works like a simple If-else statement, wherein if the condition is true then ‘If’ DOM element is rendered, else the other DOM Element is rendered. Angular uses ng-template with element selector in order to display the else section on DOM.
+
+Syntax:
+
+<div *ngIf="boolean; else id_selector">  </div>
+<ng-template #id_selector>  </ng-template>
+
+<div *ngIf="false;else id_selector">
+  This text will be hidden
+  <h1 [ngStyle]="{'color':'#FF0000'}">
+    GFG Structural Directive 
+    If Part
+  </h1>
+</div>
+<ng-template #id_selector>
+  This text will be displayed
+  <h1 [ngStyle]="{'color':'#00FF00'}">
+    GFG Structural Directive 
+    Else Part
+  </h1>
+</ng-template>
+
+---------------
+
+3. *ngFor:
+*ngFor is used to loop through the dynamic lists in the DOM. Simply, it is used to build data presentation lists and tables in HTML DOM.
+
+Syntax:
+<div *ngFor="let item of item-list">  </div>
+
+
+
+items = ["GfG 1", "GfG 2", "GfG 3", "GfG 4"];
+<div *ngFor="let item of items">
+ <p >  {{item}} </p>
+</div>
+
+
+
+-------------
+
+4. *ngSwitch :
+ngSwitch is used to choose between multiple case statements defined by the expressions inside the *ngSwitchCase and display on the DOM Element according to that. If no expression is matched, the default case DOM Element is displayed. 
+Syntax:
+
+<div [ngSwitch]="expression">
+  <div *ngSwitchCase="expression_1"></div>  
+  <div *ngSwitchCase="expression_2"></div>  
+  <div *ngSwitchDefault></div>  
+</div>
+
+
+<div [ngSwitch]="'one'">
+  <div *ngSwitchCase="'one'">One is Displayed</div>  
+  <div *ngSwitchCase="'two'">Two is Displayed</div>  
+  <div *ngSwitchDefault>Default Option is Displayed</div>  
+</div>
+
+
+
+
+-----------------
+
+ngStyles
+
+mystyle={
+  width : '20px',
+  background:'yellow',
+  color :'red'
+  }
+addstyles()
+{
+this.mystyle['color']= 'white';
+this.mystyle['background']= 'red';
+
+<p [ngStyle]="{'color': 'blue', 'font-size': '14px'}"> 
+    paragraph style is applied using ngStyle 
+ </p>
+
+  <div [ngStyle]="{'background-color':'green'}">Hi hello</div>
+
+  <div [ngStyle]="mystyle">Welcome</div>
+
+  
+  <p [ngStyle]="mystyle">Welcome</p>
+
+  <button (click)="addstyles()">Click Me</button>
+
+
+-------------------ngClass
+
+
+
+export class AppComponent {
+	users = [
+		'Mahesh',
+		'Krishna',
+		'Narendra',
+		'Jitendra'
+	];
+	getCSSClasses(flag: string) {
+		let cssClasses;
+		if (flag == 'nightMode') {
+			cssClasses = {
+				'one': true,
+				'two': true
+			}
+		} else {
+			cssClasses = {
+				'two': true,
+				'four': false
+			}
+		}
+		return cssClasses;
+	}
+
+
+
+.one {
+    color: green;
+}
+.two {
+    font-size: 20px;
+}
+.three {
+    color: red;
+}
+.four {
+    font-size: 15px;
+} 
+
+<p [ngClass]="'one'">
+Using NgClass with String.
+</p>
+
+  In case we want to add more than one CSS classes then add it separated by space.
+
+<p [ngClass]="'one two'">
+Using NgClass with String.
+</p>
+
+  We can also use ngClass with ngFor using string as follows. The given CSS classes will be applied to HTML element in each iteration.
+
+<div *ngFor="let user of users" [ngClass]="'one two'">
+  {{user}}
+</div>  
+
+
+
+<p [ngClass]="['one', 'two']">
+Using NgClass with Array.
+</p>  
+
+<p [ngClass]="{'one': true, 'three': false }">
+ Using NgClass with Object.
+</p>  
+
+ngClass with array can also be used with ngFor as follows.
+
+<div *ngFor="let user of users" [ngClass]="['one', 'two']">
+  {{user}}
+</div>  
+
+
+<div *ngFor="let user of users; let i = index">
+   <div [ngClass]="{'one': i%2==0, 'three':i%2==1}"> {{user}} </div>
+</div>  
+
+
+
+getCSSClasses(flag:string) {
+  let cssClasses;
+  if(flag == 'nightMode') {  
+     cssClasses = 
+     {
+       'one': true,
+       'two': true 
+     }	
+  } else {  
+     cssClasses = {
+       'two': true,
+      'four': false 
+     }	
+  }
+  return cssClasses;
+}	
+
+
+<div [ngClass]="getCSSClasses('nightMode')">
+ Using NgClass with Component Method.
+</div> 
+
+
+<p [ngClass]="'one two'">
+  Using NgClass with String.
+</p>
+
+<p [ngClass]="['three', 'four']">
+  Using NgClass with Array.
+</p>
+
+<p [ngClass]="{'one': true, 'three': false }">
+ Using NgClass with Object.
+</p>
+
+<div *ngFor="let user of users; let flag = even;">
+   <div [ngClass]="{'one':flag, 'two':flag, 'three':!flag, 'four':!flag}"> {{user}} </div>
+</div>
+
+<br/>
+<div [ngClass]="getCSSClasses('nightMode')">
+ Using NgClass with Component Method.
+</div> 
+
+
+
+
+
+
+
+---------------Pipes---
+UserName1= "Rambabu"
+  UserName2= "RAMU"
+  UserName3= "Mounika"
+
+
+  Bonus =145;
+
+  UserName4 = "xyz"
+
+  GetFullName() : string{
+    return this.UserName1 + ' ' + this.UserName2;
+  }
+
+
+  public data = 
+  {
+    "firstname":"Hi",
+    "lastname":"hello"
+  }
+public date = new Date();
+
+<p>UserName 1 belongs to {{UserName1 | uppercase}}</p>
+
+<p>UserName 2 belongs to {{UserName2 | lowercase}}</p>
+
+{{data | json}}
+
+<p>UserName 1 belongs to {{UserName1 | slice:3:5}}</p>
+
+<p>
+    {{5.6878 | number:'1.2-4'}}
+
+    {{5.6878 | number:'2.2-4'}}
+
+    {{5.6878 | number:'3.2-4'}}
+</p>
+
+<p>
+    {{0.25| percent}}
+</p>
+<p>
+    {{100 | currency}}
+</p>
+
+<p>
+    {{date | date:'shortTime'}}
+</p>
+
+-------Services----
+
+public employee=[
+{"id":1,"name":"Anu","age":30},
+{"id":2,"name":"sam","age":25},
+{"id":3,"name":"khan","age":22}
+];
+
+<ul>
+<li *ngFor ="let emp of employee">
+{{emp}}
+</li>
+</ul>
+
+
+infoRec : string[]=[];
+
+  getinforRec()
+  {
+  	this.infoRec = this.dservice.getinfo1()
+  }
+  constructor(private dservice:DataService) { }
+
+<p>reuse works!</p>
+
+<button type="button" name="button" (click)='getinforRec()'>Get Data</button>
+<ul>
+    <li *ngFor="let testdata of infoRec">
+        {{testdata}}
+    </li>
+</ul>
+
+-------@data.service.ts
+Info1:string[]=["Anu",'anu@yahoo.com','Hyd']
+  getinfo1():string[]
+  {
+    return this.Info1
+  }
+
+
+Your company assigns each customer a membership ID, and you are implementing a check digit for those IDs.
+
+The check digit should be calculated by adding up all digits in each membership ID. If the result of the sum is a number with more than a single digit, another iteration is required, and the digits of the result should also be added together. This process should repeat until a single-digit number is calculated.
+
+For example, for the membership ID "55555" the sum of all digits is 25. Because this is not a single-digit number, 2 and 5 would be added, and the result, 7, would be the check digit.
+
+function createCheckDigit(membershipId: string): number {
+  // Write the code that goes here.
+  return 0;
+}
+
+console.log(createCheckDigit("55555"));
